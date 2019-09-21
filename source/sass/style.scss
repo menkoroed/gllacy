@@ -632,3 +632,51 @@ textarea {
 		margin-top: 33px;
 	}
 }
+
+.advantage {
+	background-image: url('../img/slice_1.png');
+	color: #323232;
+	&__title {
+		font-size: 24px;
+		line-height: 30px;
+		font-weight: 500;
+	}
+
+	&__list {
+		@include flex;
+		flex-wrap: wrap;
+		gap: 26px;
+	}
+
+	&__item {
+		width: 400px;
+		padding-left: 56px;
+		position: relative;
+		&::before {
+			content: '';
+			position: absolute;
+			top: -17px;
+			left: 0;
+			width: 49px;
+			height: 49px;
+			background-repeat: no-repeat;
+		}
+
+		&--ice::before {
+			background-image: url('../img/ice_cream.svg');
+		}
+
+		&--moo::before {
+			background-image: url('../img/moo.svg');
+		}
+
+		&--leaf::before {
+			background-image: url('../img/leaf.svg');
+		}
+
+		&--term::before {
+			background-image: url('../img/termo.svg');
+		}
+	}
+
+}
