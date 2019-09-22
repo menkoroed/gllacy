@@ -115,6 +115,13 @@ textarea {
 		margin-left: auto;
 		border-radius: 24px;
 	}
+
+	&--news {
+		color: #fff;
+		border: none;
+		padding: 0 20px;
+		border-radius: 24px;
+	}
 }
 
 .page-header {
@@ -634,18 +641,24 @@ textarea {
 }
 
 .advantage {
+	padding: 25px 20px;
+	border-radius: 15px;
 	background-image: url('../img/slice_1.png');
 	color: #323232;
+	margin-top: 40px;
 	&__title {
 		font-size: 24px;
 		line-height: 30px;
 		font-weight: 500;
+		margin: 0;
+		width: 695px;
 	}
 
 	&__list {
 		@include flex;
 		flex-wrap: wrap;
 		gap: 26px;
+		margin-top: 31px;
 	}
 
 	&__item {
@@ -679,4 +692,71 @@ textarea {
 		}
 	}
 
+}
+
+.news {
+	margin-top: 40px;
+	&__list {
+		@include flex;
+		color: #5a5a5a;
+		* {
+			margin: 0;
+		}
+	}
+
+	&__item {
+		width: 420px;
+		border-radius: 15px;
+		&--blog {
+			background-image: url('../img/berry_bg2.png');
+			padding: 23px 20px 85px;
+		}
+
+		&--mail {
+			width: 410px;
+			position: relative;
+			background-color: #f8f7f4;
+			margin: 5px 0;
+			padding: 34px 20px;
+			&::before {
+				content: '';
+				position: absolute;
+				top: -5px;
+				left: -5px;
+				bottom: -5px;
+				right: -5px;
+				background: #f8f7f4 url('../img/pattern_mail.png');
+				border-radius: 15px;
+				z-index: -1;
+			}
+		}
+	}
+
+	&__new {
+		font-weight: 500;
+		margin-bottom: 9px;
+	}
+
+	&__title {
+		color: #353535;
+		font-size: 24px;
+		line-height: 26px;
+		font-weight: 700;
+		text-decoration: underline;
+		background-color: rgba(255, 255, 255, 0.8);
+		display: inline;
+	}
+
+	&__form {
+		@include flex;
+		margin-top: 10px;
+	}
+
+	&__mail {
+		border: 1px solid rgba(178, 178, 178, 0.52);
+		line-height: 24px;
+		padding: 9px 11px;
+		border-radius: 5px;
+		width: 229px;
+	}
 }
