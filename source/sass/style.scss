@@ -16,6 +16,7 @@ body {
 	font-size: 16px;
 	line-height: 22px;
 	font-weight: 400;
+	overflow-x: hidden;
 }
 
 .frog {
@@ -121,6 +122,12 @@ textarea {
 		border: none;
 		padding: 0 20px;
 		border-radius: 24px;
+	}
+
+	&--map {
+		display: block;
+		padding: 11px 0;
+		margin-top: 23px;
 	}
 }
 
@@ -759,4 +766,53 @@ textarea {
 		border-radius: 5px;
 		width: 229px;
 	}
+}
+
+.map {
+	position: relative;
+	&::before {
+		content: '';
+		position: absolute;
+		top: 138px;
+		left: 166px;
+		width: 79px;
+		height: 140px;
+		background-image: url('../img/pin.svg');
+	}
+
+	&__img {
+		width: 100vw;
+		margin: 0 calc(-50vw + 50%);
+	}
+
+	&__legend {
+		position: absolute;
+		top: 65px;
+		right: 0;
+		width: 302px;
+		padding: 30px 25px;
+		background-color: #fff;
+		border-radius: 10px;
+	}
+
+	&__text {
+		font-size: 14px;
+		line-height: 20px;
+		color: #343434;
+		width: 200px;
+		margin: 0;
+		margin-bottom: 17px;
+	}
+
+	&__tall {
+		font-size: 18px;
+		font-weight: 700;
+		display: block;
+		width: 220px;
+		margin-top: 4px;
+	}
+}
+
+.page-footer {
+	@include flex;
 }
