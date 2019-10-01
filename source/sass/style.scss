@@ -576,11 +576,11 @@ textarea {
 		border-radius: 15px;
 		padding: 23px 20px;
 		&--berry {
-			background-image: url('../img/berry_bg1.png');
+			background-image: url('../img/berry_bg1.jpg');
 		}
 
 		&--chocolate {
-			background-image: url('../img/chocolate.png');
+			background-image: url('../img/chocolate.jpg');
 		}
 	}
 
@@ -622,6 +622,7 @@ textarea {
 
 	&__img {
 		align-self: center;
+		border-radius: 50%;
 	}
 
 	&__price {
@@ -715,7 +716,7 @@ textarea {
 		width: 420px;
 		border-radius: 15px;
 		&--blog {
-			background-image: url('../img/berry_bg2.png');
+			background-image: url('../img/berry_bg2.jpg');
 			padding: 23px 20px 85px;
 		}
 
@@ -770,6 +771,7 @@ textarea {
 
 .map {
 	position: relative;
+	margin-top: 40px;
 	&::before {
 		content: '';
 		position: absolute;
