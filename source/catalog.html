@@ -127,35 +127,38 @@
 			<section class="filter">
 				<form class="filter__form" action="#" method="POST">
 					<select class="filter__select">
-						<option value="popular">по популярности</option>
+						<option class="filter__option" value="popular">по популярности</option>
 					</select>
-					<label for="range">Цена: 100 руб. – 500 руб.</label>
-					<input type="range" min="100" max="500" id="range">
-					<fieldset>
-						<legend>Жирность:</legend>
-						<input id="zero" type="radio" name="fat">
-						<label for="zero">0%</label>
-						<input id="ten" type="radio" name="fat" checked>
-						<label for="ten">до 10%</label>
-						<input id="thirty" type="radio" name="fat">
-						<label for="thirty">до 30%</label>
-						<input id="less" type="radio" name="fat">
-						<label for="less">выше 30%</label>
+					<label class="filter__label" for="lower">Цена: 100 руб. – 500 руб.</label>
+					<span class="filter__wrap">
+						<input class="filter__input filter__input--range" type="range" min="100" max="500" id="lower" value="400">
+						<input class="filter__input filter__input--range" type="range" min="100" max="500" id="upper" value="150">
+					</span>
+					<fieldset class="filter__field">
+						<legend class="filter__legend">Жирность:</legend>
+						<input class="filter__input filter__input--radio" id="zero" type="radio" name="fat">
+						<label class="filter__label" for="zero">0%</label>
+						<input class="filter__input filter__input--radio" id="ten" type="radio" name="fat" checked>
+						<label class="filter__label" for="ten">до 10%</label>
+						<input class="filter__input filter__input--radio" id="thirty" type="radio" name="fat">
+						<label class="filter__label" for="thirty">до 30%</label>
+						<input class="filter__input filter__input--radio" id="less" type="radio" name="fat">
+						<label class="filter__label" for="less">выше 30%</label>
 					</fieldset>
-					<fieldset>
-						<legend>Наполнители:</legend>
-						<input id="chock" type="checkbox" checked>
-						<label for="chock">шоколадные</label>
-						<input id="sugar" type="checkbox" checked>
-						<label for="sugar">сахарные присыпки</label>
-						<input id="fruct" type="checkbox">
-						<label for="fruct">фрукты</label>
-						<input id="sirop" type="checkbox">
-						<label for="sirop">сиропы</label>
-						<input id="jem" type="checkbox">
-						<label for="jem">джемы</label>
+					<fieldset class="filter__field">
+						<legend class="filter__label">Наполнители:</legend>
+						<input class="filter__input filter__input--checkbox" id="chock" type="checkbox" checked>
+						<label class="filter__label" for="chock">шоколадные</label>
+						<input class="filter__input filter__input--checkbox" id="sugar" type="checkbox" checked>
+						<label class="filter__label" for="sugar">сахарные присыпки</label>
+						<input class="filter__input filter__input--submit" id="fruct" type="checkbox">
+						<label class="filter__label" for="fruct">фрукты</label>
+						<input class="filter__input filter__input--submit" id="sirop" type="checkbox">
+						<label class="filter__label" for="sirop">сиропы</label>
+						<input class="filter__input filter__input--submit" id="jem" type="checkbox">
+						<label class="filter__label" for="jem">джемы</label>
 					</fieldset>
-					<input type="submit" value="Применить">
+					<input class="filter__input filter__input--submit" type="submit" value="Применить">
 				</form>
 			</section>
 			<section class="catalog">
@@ -280,5 +283,6 @@
 			</div>
 		</div>
 		<script src="js/hover.js"></script>
+		<script src="js/range.js"></script>
 	</body>
 </html>

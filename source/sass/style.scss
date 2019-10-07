@@ -901,3 +901,45 @@ textarea {
 		text-decoration: underline;
 	}
 }
+
+.filter {
+	&__form {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&__input {
+		&--range {
+			width: 188px;
+			height: 4px;
+			margin: 0;
+			appearance: none;
+			background-color: #d0d8d2;
+			display: flex;
+			&::-webkit-slider-thumb,
+			&::-moz-range-thumb {
+				appearance: none;
+				width: 21px;
+				height: 22px;
+				box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+				background-color: #f8f7f4;
+				border: none;
+				border-radius: 50%;
+				cursor: pointer;
+			}
+
+			&::-moz-range-progress {
+				background-color: #d0d8d2;
+			}
+
+			&:first-child::-moz-range-progress {
+				background-color: #f8f7f4;
+			}
+
+
+			&:last-child {
+				margin-top: -4px;
+			}
+		}
+	}
+}
