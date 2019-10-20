@@ -1,4 +1,5 @@
 $color: #fff;
+$filter: rgba(248,247,244, 0.2);
 @mixin flex {
 	display: flex;
 	justify-content: space-between;
@@ -904,18 +905,82 @@ textarea {
 
 .filter {
 	&__form {
-		display: flex;
+		@include flex;
 		flex-wrap: wrap;
+		font-weight: 500;
+		gap: 36px;
+	}
+
+	&__wrap {
+		width: 194px;
+		margin-top: -20px;
+		font-size: 14px;
+		position: relative;
+		padding-left: 16px;
+		&::before {
+			content: '';
+			position: absolute;
+			bottom: 14px;
+			right: 15px;
+			width: 0;
+			height: 0;
+			border-width: 5px 4.5px 0 4.5px;
+			border-style: solid;
+			border-color: #fff transparent transparent;
+		}
+	}
+
+	&__select {
+		font: inherit;
+		font-size: 16px;
+		color: #fff;
+		appearance: none;
+		border: none;
+		width: 194px;
+		border-radius: 20px;
+		background-color: $filter;
+		padding: 6px;
+		margin-top: 3px;
+		margin-left: -16px;
+	}
+
+	&__field {
+		@include flex;
+		border: none;
+		margin: 0;
+		background-color: $filter;
+		border-radius: 20px;
+		&--radio {
+			width: 415px;
+			padding: 7px 17px;
+			padding-left: 46px;
+		}
+
+		&--checkbox {
+			width: 703px;
+			padding: 7px 20px;
+			padding-left: 48px;
+		}
+	}
+
+	&__legend {
+		margin: -24px 0 2px -32px;
+		font-size: 14px;
+		padding: 0;
 	}
 
 	&__input {
 		&--range {
-			width: 188px;
+			width: 220px;
 			height: 4px;
 			margin: 0;
+			margin-top: 3px;
+			margin-left: -16px;
 			appearance: none;
-			background-color: #d0d8d2;
+			background-color: #9cb0a4;
 			display: flex;
+			padding: 18px 16px;
+			border-radius: 20px;
 			&::-webkit-slider-thumb,
 			&::-moz-range-thumb {
 				appearance: none;
@@ -928,6 +993,10 @@ textarea {
 				cursor: pointer;
 			}
 
+			&::-moz-range-track {
+				background-color: rgba(248,247,244, 0.5);
+			}
+
 			&::-moz-range-progress {
 				background-color: #d0d8d2;
 			}
@@ -938,8 +1007,69 @@ textarea {
 
 
 			&:last-child {
-				margin-top: -4px;
+				margin-top: -36px;
 			}
+		}
+
+		&--submit {
+			width: 144px;
+			color: #fff;
+			border: 2px solid #ffffff;
+			border-radius: 20px;
+			background-color: $filter;
+		}
+
+		&:checked + .filter__label--radio::before {
+			background-color: #f8f7f4;
+			box-shadow: inset 0 0 0 4px #9cb0a4;
+		}
+
+		&:checked + .filter__label--checkbox::after {
+			content: '';
+			position: absolute;
+			top: 7px;
+			left: -26px;
+			width: 11px;
+			height: 7px;
+			border: 2px solid #fff;
+			border-top: none;
+			border-right: none;
+			transform: rotate(-45deg);
+		}
+	}
+
+	&__label {
+		position: relative;
+		&--radio {
+			&::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: -30px;
+				width: 21px;
+				height: 22px;
+				border: 1px solid #f8f7f4;
+				border-radius: 50%;
+			}
+		}
+
+		&--checkbox {
+			&::before {
+				content: '';
+				position: absolute;
+				top: 2px;
+				left: -31px;
+				width: 20px;
+				height: 20px;
+				border: 1px solid #fff;
+				border-radius: 5px;
+			}
+		}
+
+		&--range {
+			font-size: 14px;
+			margin-top: -22px;
+			padding-left: 16px;
 		}
 	}
 }

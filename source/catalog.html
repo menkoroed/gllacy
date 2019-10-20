@@ -126,37 +126,43 @@
 			<h1 class="page-main__title">Сливочное мороженое</h1>
 			<section class="filter">
 				<form class="filter__form" action="#" method="POST">
-					<select class="filter__select">
-						<option class="filter__option" value="popular">по популярности</option>
-					</select>
-					<label class="filter__label" for="lower">Цена: 100 руб. – 500 руб.</label>
-					<span class="filter__wrap">
+					<label class="filter__wrap" for="popular">
+						Сортировка:
+						<select class="filter__select" id="popular">
+							<option class="filter__option" value="popular">по популярности</option>
+							<option class="filter__option" value="less">сначала недорогие</option>
+							<option class="filter__option" value="more">сначала дорогие</option>
+							<option class="filter__option" value="fat">по жирности</option>
+						</select>
+					</label>
+					<label class="filter__label filter__label--range">
+						Цена: 100 руб. – 500 руб.
 						<input class="filter__input filter__input--range" type="range" min="100" max="500" id="lower" value="400">
 						<input class="filter__input filter__input--range" type="range" min="100" max="500" id="upper" value="150">
-					</span>
-					<fieldset class="filter__field">
+					</label>
+					<fieldset class="filter__field filter__field--radio">
 						<legend class="filter__legend">Жирность:</legend>
-						<input class="filter__input filter__input--radio" id="zero" type="radio" name="fat">
-						<label class="filter__label" for="zero">0%</label>
-						<input class="filter__input filter__input--radio" id="ten" type="radio" name="fat" checked>
-						<label class="filter__label" for="ten">до 10%</label>
-						<input class="filter__input filter__input--radio" id="thirty" type="radio" name="fat">
-						<label class="filter__label" for="thirty">до 30%</label>
-						<input class="filter__input filter__input--radio" id="less" type="radio" name="fat">
-						<label class="filter__label" for="less">выше 30%</label>
+						<input class="filter__input visually-hidden" id="zero" type="radio" name="fat">
+						<label class="filter__label filter__label--radio" for="zero">0%</label>
+						<input class="filter__input visually-hidden" id="ten" type="radio" name="fat" checked>
+						<label class="filter__label filter__label--radio" for="ten">до 10%</label>
+						<input class="filter__input visually-hidden" id="thirty" type="radio" name="fat">
+						<label class="filter__label filter__label--radio" for="thirty">до 30%</label>
+						<input class="filter__input visually-hidden" id="less" type="radio" name="fat">
+						<label class="filter__label filter__label--radio" for="less">выше 30%</label>
 					</fieldset>
-					<fieldset class="filter__field">
-						<legend class="filter__label">Наполнители:</legend>
-						<input class="filter__input filter__input--checkbox" id="chock" type="checkbox" checked>
-						<label class="filter__label" for="chock">шоколадные</label>
-						<input class="filter__input filter__input--checkbox" id="sugar" type="checkbox" checked>
-						<label class="filter__label" for="sugar">сахарные присыпки</label>
-						<input class="filter__input filter__input--submit" id="fruct" type="checkbox">
-						<label class="filter__label" for="fruct">фрукты</label>
-						<input class="filter__input filter__input--submit" id="sirop" type="checkbox">
-						<label class="filter__label" for="sirop">сиропы</label>
-						<input class="filter__input filter__input--submit" id="jem" type="checkbox">
-						<label class="filter__label" for="jem">джемы</label>
+					<fieldset class="filter__field filter__field--checkbox">
+						<legend class="filter__legend">Наполнители:</legend>
+						<input class="filter__input visually-hidden" id="chock" type="checkbox" checked>
+						<label class="filter__label filter__label--checkbox" for="chock">шоколадные</label>
+						<input class="filter__input visually-hidden" id="sugar" type="checkbox" checked>
+						<label class="filter__label filter__label--checkbox" for="sugar">сахарные присыпки</label>
+						<input class="filter__input visually-hidden" id="fruct" type="checkbox">
+						<label class="filter__label filter__label--checkbox" for="fruct">фрукты</label>
+						<input class="filter__input visually-hidden" id="sirop" type="checkbox">
+						<label class="filter__label filter__label--checkbox" for="sirop">сиропы</label>
+						<input class="filter__input visually-hidden" id="jem" type="checkbox">
+						<label class="filter__label filter__label--checkbox" for="jem">джемы</label>
 					</fieldset>
 					<input class="filter__input filter__input--submit" type="submit" value="Применить">
 				</form>
